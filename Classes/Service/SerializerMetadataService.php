@@ -22,7 +22,7 @@ use SourceBroker\T3api\Annotation\Serializer\VirtualProperty;
 use Symfony\Component\Yaml\Yaml;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Utility\StringUtility;
-use TYPO3\CMS\Extbase\Reflection\DocCommentParser;
+use SourceBroker\T3api\Reflection\DocCommentParser;
 
 /**
  * Class SerializerMetadataService
@@ -238,6 +238,8 @@ class SerializerMetadataService
         Reflector $reflector,
         string $identifier
     ): ?string {
+
+
         $docCommentParser = new DocCommentParser(true);
         $docCommentParser->parseDocComment($reflector->getDocComment());
 
